@@ -8,10 +8,10 @@ to run at 60fps.
 
 1. Clone the repository
 
-```bash
-$ git clone https://github.com/mikejoyceio/website-optimization
+  ```bash
+  $ git clone https://github.com/WarrenAdams/web-op
 
-```
+  ```
 
 1. Run a local server for the project in the dist folder.
 
@@ -28,19 +28,19 @@ The steps to improve the performance are:
 
 * Minify the JavaScript and CSS.
 
-I accomplished this with the gulp task runners cssnano and uglify.
+  I accomplished this with the gulp task runners cssnano and uglify.
 
 * Compressed the images.
 
-I used the gulp task runner imagemin to compress the size of the images.
+  I used the gulp task runner imagemin to compress the size of the images.
 
 * Loaded the Google fonts in the css file.
 
-used @ import to load the fonts in css so it wouldn't be render blocking.
+  I used `@import` to load the fonts in css so it wouldn't be render blocking.
 
 * Inlined the most immediately-used CSS and allowed the rest to be downloaded using the normal process.
 
-I accomplished this with a gulp task runner gulp critical. The task runner takes the critical css and inlines it.
+  I accomplished this with a gulp task runner gulp critical. The task runner takes the critical css and inlines it.
 
 * Changes to main.js
 
@@ -79,8 +79,7 @@ for (var i = 0; i < items.length; i++) {
 ```
 
 The `changePizzaSizes` function also needed to be fixed because it was causing the page to stutter every time
-you used the change pizza size slider. I took all the DOM access and calculation out of loop and made that part so it
-was only done once every time the function was called.
+you used the change pizza size slider. I took all the DOM access and calculation out of loop and made that part separate so it was only done once every time the function was called.
 
 before :
 
