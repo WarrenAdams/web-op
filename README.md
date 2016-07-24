@@ -26,23 +26,23 @@ $ git clone https://github.com/mikejoyceio/website-optimization
 
 The steps to improve the performance are:
 
-1. Minify the JavaScript and CSS.
+* Minify the JavaScript and CSS.
 
 I accomplished this with the gulp task runners cssnano and uglify.
 
-1. Compressed the images.
+* Compressed the images.
 
 I used the gulp task runner imagemin to compress the size of the images.
 
-1. Loaded the Google fonts in the css file.
+* Loaded the Google fonts in the css file.
 
 used @ import to load the fonts in css so it wouldn't be render blocking.
 
-1. Inlined the most immediately-used CSS and allowed the rest to be downloaded using the normal process.
+* Inlined the most immediately-used CSS and allowed the rest to be downloaded using the normal process.
 
 I accomplished this with a gulp task runner gulp critical. The task runner takes the critical css and inlines it.
 
-1. Changes to main.js
+* Changes to main.js
 
 Changes needed to be made to the updatePositions function which was called on every scroll event.
 The first change that I made was to use a more specific query selector to access the DOM,so I changed
@@ -112,7 +112,5 @@ function changePizzaSizes(size) {
 
 
 ### Results
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
 
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+The PageSpeed score for mobile was 94 and 96 for Desktop. The `pizza.html` site runs and a smooth 60fps.
