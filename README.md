@@ -97,14 +97,37 @@ after:
 
 ```javascript
 function changePizzaSizes(size) {
-  var dx = determineDx(document.getElementsByClassName("randomPizzaContainer"), size);
-  var newwidth = (document.getElementsByClassName("randomPizzaContainer").offsetWidth + dx) + 'px';
+
+  var dx = determineDx(document.querySelector(".randomPizzaContainer"), size);
+  var newwidth = (document.querySelector(".randomPizzaContainer").offsetWidth + dx) + 'px';
   var elements = document.querySelectorAll(".randomPizzaContainer");
 
   for (var i = elements.length; i--;) {
     elements[i].style.width = newwidth;
   }
 };
+```
+
+I also moved a variable declaration out of a for loop so it wasn't being created every time
+the loop ran.
+
+Before:
+
+```javascript
+
+for (var i = 2; i < 100; i++) {
+  var pizzasDiv = document.getElementById("randomPizzas");
+  pizzasDiv.appendChild(pizzaElementGenerator(i));
+}
+```
+
+After:
+
+```javascript
+var pizzasDiv = document.getElementById("randomPizzas");
+for (var i = 2; i < 100; i++) {
+  pizzasDiv.appendChild(pizzaElementGenerator(i));
+}
 ```
 
 
